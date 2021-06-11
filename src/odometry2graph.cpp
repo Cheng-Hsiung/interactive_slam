@@ -445,7 +445,7 @@ public:
       updated |= ImGui::DragFloat("keyframe_delta_x", &keyframe_delta_x, 0.1f, 0.1f, 100.0f);
       updated |= ImGui::DragFloat("keyframe_delta_angle", &keyframe_delta_angle, 0.01f, 0.01f, 3.15f);
 
-      if(delta_updated && !updated) {
+      if(delta_updated && !updated && odometry_set != nullptr) {
         odometry_set->select_keyframes(keyframe_delta_x, keyframe_delta_angle);
       }
       delta_updated = updated;
